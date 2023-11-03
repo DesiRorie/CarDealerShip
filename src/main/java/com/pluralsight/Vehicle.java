@@ -1,0 +1,22 @@
+package com.pluralsight;
+
+public class Vehicle {
+    int vin;
+    int year;
+    String make;
+    String vehicleType;
+    String color;
+    int odometer;
+    double price;
+
+
+    public Vehicle(int vin, int year, String make, String vehicleType, String color, int odometer, double price) {
+        this.vin = vin;
+        this.year = year;
+        this.make = make;
+        this.vehicleType = vehicleType;
+        this.color = color;
+        this.odometer = odometer;
+        this.price = price;
+    }
+}
