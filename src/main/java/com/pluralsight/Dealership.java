@@ -15,7 +15,6 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
-//        ArrayList inventory = new ArrayList<>();
         this.inventory = new ArrayList<>();
     }
 
@@ -23,19 +22,78 @@ public class Dealership {
         //create an array of the vehicles that fit into the range.
         return null ;
     }
-    List<Vehicle> getVehiclesByMakeModel(String make, String model){
+    List<Vehicle> getVehiclesByMakeModel(String makeModel) {
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+//        System.out.println(inventory);
+        for (Vehicle vehicle: inventory) {
+            if (vehicle.make.equalsIgnoreCase(makeModel.trim()) || vehicle.model.equalsIgnoreCase(makeModel.trim())) {
+                filteredVehicles.add(vehicle);
+            }
+        }
+            for (Vehicle filteredVehicle: filteredVehicles) {
+                System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            }
         return null;
     }
     List<Vehicle> getVehicleYear(int min, int max){
+
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+
+        for (Vehicle vehicle: inventory) {
+            if (vehicle.year >= min && vehicle.year <= max ){
+                filteredVehicles.add(vehicle);
+            }
+    }
+            for (Vehicle filteredVehicle: filteredVehicles) {
+                System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            }
         return null;
     }
     List<Vehicle> getVehiclesByColor(String color){
+        ArrayList<Vehicle> filteredByColor = new ArrayList<>();
+
+        for (Vehicle vehicle: inventory) {
+            if (vehicle.color.equalsIgnoreCase(color)){
+                filteredByColor.add(vehicle);
+            }
+
+        }
+        for (Vehicle filteredVehicle: filteredByColor) {
+                System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+        }
         return null;
+
     }
     List<Vehicle> getVehiclesByMileage(int min, int max){
+
+        ArrayList<Vehicle> filteredByMilage = new ArrayList<>();
+
+        for (Vehicle vehicle: inventory) {
+            if (vehicle.odometer >= min && vehicle.odometer <= max){
+                filteredByMilage.add(vehicle);
+            }
+
+        }
+        for (Vehicle filteredVehicle: filteredByMilage) {
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+        }
         return null;
+
     }
     List<Vehicle> getVehiclesType(String vehicleType){
+        ArrayList<Vehicle> filteredByType = new ArrayList<>();
+
+        for (Vehicle vehicle: inventory) {
+            if (vehicle.vehicleType.equalsIgnoreCase(vehicleType)){
+                filteredByType.add(vehicle);
+            }
+
+        }
+        for (Vehicle filteredVehicle: filteredByType) {
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+        }
+
+
         return null;
     }
 
@@ -48,6 +106,7 @@ public class Dealership {
 
     }
     public void removeVehicle(Vehicle vehicle){
+
         inventory.remove(vehicle);
     }
 
@@ -55,7 +114,7 @@ public class Dealership {
     public String toString() {
         for (Vehicle vehicle:inventory) {
 
-            System.out.println(vehicle.vin + " " + vehicle.year + " " + vehicle.make + " " + vehicle.model + " " + vehicle.vehicleType + " " + vehicle.color + " " + vehicle.odometer + " " + vehicle.price);
+            System.out.println(vehicle.vin + "|" + vehicle.year + "|" + vehicle.make + "|" + vehicle.model + "|" + vehicle.vehicleType + "|" + vehicle.color + "|" + vehicle.odometer + "|" + vehicle.price);
         }
         return " ";
     }

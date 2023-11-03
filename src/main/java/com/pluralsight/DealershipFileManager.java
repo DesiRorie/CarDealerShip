@@ -1,8 +1,7 @@
 package com.pluralsight;
 
 import java.io.*;
-import java.util.Collections;
-import java.util.Comparator;
+
 
 public class DealershipFileManager {
 
@@ -10,7 +9,7 @@ public class DealershipFileManager {
     public DealershipFileManager() {
         try{
              BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/inventory.csv"));
-//            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/inventory.csv",true));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/inventory.csv",true));
         }
         catch(Exception e){
             e.printStackTrace();
