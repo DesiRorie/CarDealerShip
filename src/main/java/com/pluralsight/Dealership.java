@@ -15,7 +15,8 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        ArrayList inventory = new ArrayList<>();
+//        ArrayList inventory = new ArrayList<>();
+        this.inventory = new ArrayList<>();
     }
 
     List<Vehicle> getVehiclesByPrice(double min, double max){
@@ -48,5 +49,14 @@ public class Dealership {
     }
     public void removeVehicle(Vehicle vehicle){
         inventory.remove(vehicle);
+    }
+
+    @Override
+    public String toString() {
+        for (Vehicle vehicle:inventory) {
+
+            System.out.println(vehicle.vin + " " + vehicle.year + " " + vehicle.make + " " + vehicle.model + " " + vehicle.vehicleType + " " + vehicle.color + " " + vehicle.odometer + " " + vehicle.price);
+        }
+        return " ";
     }
 }
